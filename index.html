@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMOR ESTILO ❁ FE | JHS — Tienda Oficial</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Syne', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FFFFFF; color: #0A0A0A; }
+        .font-brand { font-family: 'Syne', sans-serif; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #111; border-radius: 3px; }
+        .fade-in { animation: fadeIn 0.25s ease-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-black selection:text-white">
+
+    <!-- TOP BAR CON TASA BCV EN VIVO -->
+    <div class="bg-black text-white text-[11px] sm:text-xs tracking-[0.18em] uppercase py-2.5 px-4 text-center font-medium flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+        <span>AMOR • ESTILO ❁ FE | JHS</span>
+        <span class="opacity-40 hidden sm:inline">•</span>
+        <span class="bg-white/15 px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider">
+            Tasa BCV: <strong id="topBarBcvRate">Bs. 0.00</strong> / $1
+        </span>
+        <span class="opacity-40 hidden md:inline">•</span>
+        <a href="https://wa.me/584248048979" target="_blank" class="underline hover:text-gray-300 hidden md:inline">WHATSAPP: +58 424-8048979</a>
+    </div>
+
+    <!-- HEADER STICKY -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Left: Mobile Menu & Nav -->
+            <div class="flex items-center gap-6">
+                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 -ml-2 text-black hover:bg-gray-100 rounded-full">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+                <nav class="hidden lg:flex items-center gap-7 text-xs font-semibold tracking-[0.15em] uppercase">
+                    <a href="#inicio" onclick="showPublicView()" class="hover:text-gray-500 transition">Inicio</a>
+                    <a href="#catalogo" onclick="showPublicView()" class="hover:text-gray-500 transition">Catálogo</a>
+                    <button onclick="openSizeGuideModal()" class="hover:text-gray-500 transition uppercase">Guía de Tallas</button>
+                    <a href="#esencia" onclick="showPublicView()" class="hover:text-gray-500 transition">Esencia JHS</a>
+                </nav>
+            </div>
+
+            <!-- Center: LOGO AMOR ESTILO FE (JHS) -->
+            <a href="#inicio" onclick="showPublicView()" class="flex flex-col items-center justify-center group">
+                <img id="customLogoImg" src="" alt="Amor Estilo Fe Logo" class="hidden h-14 object-contain" />
+                <div id="defaultLogoSvg" class="flex flex-col items-center select-none">
+                    <svg viewBox="0 0 360 95" class="h-12 sm:h-14 w-auto fill-black">
+                        <!-- A -->
+                        <path d="M42 12 L10 72 L28 72 L38 50 L50 43 L50 72 L72 72 L46 12 Z" />
+                        <!-- M -->
+                        <path d="M84 72 L112 12 L120 12 L135 42 L150 12 L158 12 L186 72 L166 72 L147 36 L137 56 L133 56 L123 36 L104 72 Z" />
+                        <!-- O (Wreath + JHS) -->
+                        <g transform="translate(226, 42)">
+                            <circle cx="0" cy="0" r="26" fill="none" stroke="black" stroke-width="7" stroke-dasharray="6 4 9 3 5 4" stroke-linecap="round"/>
+                            <circle cx="0" cy="0" r="23" fill="none" stroke="black" stroke-width="4" stroke-dasharray="3 6 7 4" />
+                            <text x="0" y="5" text-anchor="middle" font-family="Syne, sans-serif" font-weight="800" font-size="13" letter-spacing="1.5" fill="black">JHS</text>
+                        </g>
+                        <!-- R -->
+                        <path d="M272 12 L315 12 C330 12 338 22 338 34 C338 45 330 52 319 54 L338 72 L314 72 L298 54 L298 24 L278 34 L294 72 L272 72 Z" />
+                        <!-- ESTILO ❁ FE -->
+                        <text x="148" y="91" text-anchor="middle" font-family="Syne, sans-serif" font-weight="800" font-size="13.5" letter-spacing="4">ESTILO</text>
+                        <text x="198" y="90" text-anchor="middle" font-size="12">❁</text>
+                        <text x="232" y="91" text-anchor="middle" font-family="Syne, sans-serif" font-weight="800" font-size="13.5" letter-spacing="4">FE</text>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Right: User Auth, Hidden Admin Button, Wishlist & Cart -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <!-- BOTÓN OCULTO DE ADMIN (Solo aparece cuando inicia sesión el administrador) -->
+                <button id="adminNavBtn" onclick="toggleAdminView()" class="hidden items-center gap-1.5 bg-black text-white text-xs font-semibold px-3.5 py-2 rounded-full hover:bg-gray-800 transition shadow-sm">
+                    <i data-lucide="package-plus" class="w-4 h-4"></i>
+                    <span class="hidden sm:inline">Panel Admin</span>
+                </button>
+
+                <!-- Botón Único de Cuenta / Iniciar Sesión -->
+                <button id="userAuthBtn" onclick="handleUserButtonClick()" class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider px-3 py-2 rounded-full hover:bg-gray-100 transition">
+                    <i data-lucide="user" class="w-5 h-5"></i>
+                    <span id="userAuthLabel" class="hidden md:inline">Iniciar Sesión</span>
+                </button>
+
+                <!-- Favoritos -->
+                <button onclick="openWishlistModal()" class="relative p-2 rounded-full hover:bg-gray-100 transition" title="Mis Favoritos">
+                    <i data-lucide="heart" class="w-5 h-5"></i>
+                    <span id="wishlistBadge" class="hidden absolute top-1 right-1 bg-black text-white text-[10px] font-bold w-4 h-4 rounded-full items-center justify-center">0</span>
+                </button>
+
+                <!-- Carrito -->
+                <button onclick="toggleCartDrawer(true)" class="relative flex items-center gap-2 bg-black text-white px-3.5 py-2 rounded-full hover:bg-gray-800 transition">
+                    <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                    <span id="cartCount" class="text-xs font-bold">0</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-gray-100 px-6 py-4 space-y-3 text-sm font-semibold uppercase tracking-wider">
+            <a href="#inicio" onclick="showPublicView(); toggleMobileMenu();" class="block py-1">Inicio</a>
+            <a href="#catalogo" onclick="showPublicView(); toggleMobileMenu();" class="block py-1">Catálogo</a>
+            <button onclick="openSizeGuideModal(); toggleMobileMenu();" class="block py-1 uppercase text-left w-full">Guía de Tallas</button>
+            <a href="#esencia" onclick="showPublicView(); toggleMobileMenu();" class="block py-1">Esencia JHS</a>
+            <a href="https://www.instagram.com/amor_estilo.fe/" target="_blank" class="block py-1">Instagram @amor_estilo.fe</a>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         VISTA PÚBLICA DE LA TIENDA
+    =========================================== -->
+    <main id="publicStoreView" class="flex-grow">
+        
+        <!-- HERO SECTION -->
+        <section id="inicio" class="relative overflow-hidden bg-gradient-to-b from-white via-[#FAF8FC] to-[#F5F5F5] border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black text-white text-[11px] font-semibold uppercase tracking-[0.2em]">
+                        <span>❁ Colección Oficial JHS</span>
+                    </div>
+                    <h1 class="font-brand text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] text-black">
+                        VISTE CON AMOR,<br>
+                        BRILLA CON ESTILO<br>
+                        <span class="underline decoration-2 underline-offset-8">CAMINA CON FE.</span>
+                    </h1>
+                    <p class="text-gray-600 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Prendas seleccionadas y diseñadas con propósito. Precios expresados en USD ($) y calculados automáticamente en Bolívares (Tasa BCV).
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#catalogo" class="w-full sm:w-auto px-8 py-4 bg-black text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-gray-800 transition text-center">
+                            Explorar Catálogo
+                        </a>
+                        <button onclick="openSizeGuideModal()" class="w-full sm:w-auto px-8 py-4 bg-white text-black border border-black text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-gray-100 transition flex items-center justify-center gap-2">
+                            <i data-lucide="ruler" class="w-4 h-4"></i> Guía de Tallas
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta visual derecha -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md bg-white p-6 rounded-3xl shadow-xl border border-gray-100">
+                        <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-gray-100 relative">
+                            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80" alt="Amor Estilo Fe Moda" class="w-full h-full object-cover object-center" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
+                                <span class="text-[11px] uppercase tracking-[0.25em] opacity-80">Pago Móvil • Zelle • Binance</span>
+                                <p class="font-brand text-2xl font-bold mt-1">AMOR • ESTILO ❁ FE</p>
+                                <p class="text-xs opacity-90 mt-1">@amor_estilo.fe</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATÁLOGO DE PRODUCTOS -->
+        <section id="catalogo" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-gray-400">Tienda Online</span>
+                    <h2 class="font-brand text-3xl sm:text-4xl font-extrabold tracking-tight mt-1">CATÁLOGO DE PRENDAS</h2>
+                </div>
+                <!-- Buscador + Indicador BCV -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                    <div class="px-4 py-2.5 bg-gray-100 rounded-full text-xs font-semibold flex items-center justify-center gap-1.5">
+                        <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+                        <span>Tasa BCV: <strong id="catalogBcvBadge">Bs. 0.00</strong></span>
+                    </div>
+                    <div class="relative w-full sm:w-64">
+                        <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+                        <input id="searchInput" oninput="renderCatalog()" type="text" placeholder="Buscar prenda..." class="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-full text-sm focus:outline-none focus:border-black transition" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filtros de Categoría -->
+            <div id="categoryFilters" class="flex items-center gap-2 overflow-x-auto pb-4 mb-8"></div>
+
+            <!-- Grid de Productos -->
+            <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"></div>
+        </section>
+
+        <!-- SECCIÓN NUESTRA ESENCIA (JHS) -->
+        <section id="esencia" class="py-16 bg-[#F8F8F8] border-y border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-gray-500">Nuestra Identidad</span>
+                    <h2 class="font-brand text-3xl sm:text-4xl font-extrabold mt-2">AMOR • ESTILO ❁ FE (JHS)</h2>
+                    <p class="text-gray-600 text-sm mt-3">Más que una tienda de ropa, somos una marca creada con propósito, llevando un mensaje de luz, elegancia y fe en cada prenda.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-8 rounded-2xl border border-gray-100 text-center space-y-3">
+                        <div class="w-12 h-12 rounded-full bg-black text-white flex items-center justify-center mx-auto">
+                            <i data-lucide="heart" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-brand text-xl font-bold uppercase">Amor</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Cuidamos cada detalle y ofrecemos una atención cálida y cercana para que te sientas especial en todo momento.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl border border-gray-100 text-center space-y-3">
+                        <div class="w-12 h-12 rounded-full bg-black text-white flex items-center justify-center mx-auto">
+                            <i data-lucide="sparkles" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-brand text-xl font-bold uppercase">Estilo</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Prendas versátiles, modernas y llenas de personalidad que se adaptan a tu día a día con distinción.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl border border-gray-100 text-center space-y-3">
+                        <div class="w-12 h-12 rounded-full bg-black text-white flex items-center justify-center mx-auto font-brand font-extrabold text-xs tracking-wider">
+                            JHS
+                        </div>
+                        <h3 class="font-brand text-xl font-bold uppercase">Fe</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Con Jesucristo (JHS) en el centro de nuestro caminar, inspiramos confianza, propósito y esperanza.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMUNIDAD INSTAGRAM -->
+        <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="bg-black text-white rounded-3xl p-8 sm:p-14 flex flex-col items-center space-y-5">
+                <i data-lucide="instagram" class="w-10 h-10"></i>
+                <h2 class="font-brand text-2xl sm:text-4xl font-extrabold tracking-tight">SÍGUENOS EN @AMOR_ESTILO.FE</h2>
+                <p class="text-gray-300 text-sm sm:text-base max-w-lg">
+                    Descubre nuestros nuevos ingresos, historias diarias, outfits disponibles y promociones exclusivas en nuestro perfil oficial de Instagram.
+                </p>
+                <a href="https://www.instagram.com/amor_estilo.fe/" target="_blank" class="px-8 py-4 bg-white text-black font-bold text-xs uppercase tracking-[0.2em] rounded-full hover:bg-gray-200 transition">
+                    Ir a Instagram @amor_estilo.fe
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- =========================================================
+         APARTADO PRIVADO DEL PERSONAL (PANEL DE PRODUCTOS + BCV + PAGOS)
+    ========================================================== -->
+    <section id="adminPanelView" class="hidden flex-grow bg-gray-50 py-10 px-4 sm:px-6 lg:px-8 fade-in">
+        <div class="max-w-6xl mx-auto space-y-8">
+            
+            <!-- Encabezado del Panel -->
+            <div class="bg-black text-white p-6 sm:p-8 rounded-3xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <span class="text-[11px] uppercase tracking-[0.25em] text-gray-400">Modo Personal Activo</span>
+                    <h1 class="font-brand text-2xl sm:text-3xl font-extrabold mt-1">PANEL DE ADMINISTRACIÓN</h1>
+                    <p class="text-xs text-gray-300 mt-1">Gestiona la tasa BCV, tus métodos de pago, el logo y el catálogo de ropa.</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-3">
+                    <button onclick="showPublicView()" class="px-4 py-2.5 bg-white text-black text-xs font-bold uppercase tracking-wider rounded-full hover:bg-gray-200 transition flex items-center gap-1.5">
+                        <i data-lucide="eye" class="w-4 h-4"></i> Ver Tienda
+                    </button>
+                    <button onclick="logoutUser()" class="px-4 py-2.5 bg-red-600 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-red-700 transition flex items-center gap-1.5">
+                        <i data-lucide="log-out" class="w-4 h-4"></i> Cerrar Sesión
+                    </button>
+                </div>
+            </div>
+
+            <!-- CONFIGURACIÓN RÁPIDA: TASA BCV, MÉTODOS DE PAGO Y LOGO -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                
+                <!-- 1. Tasa del Día BCV -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 space-y-3">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="calculator" class="w-5 h-5"></i>
+                        <h3 class="font-brand text-base font-extrabold uppercase">Tasa BCV (Bs. / $1)</h3>
+                    </div>
+                    <p class="text-xs text-gray-500">Todos los precios en Bolívares del catálogo y del carrito se multiplicarán automáticamente por esta tasa:</p>
+                    <div class="flex items-center gap-2 pt-1">
+                        <input id="adminBcvInput" type="number" step="0.01" min="1" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl text-sm font-bold focus:outline-none focus:border-black" placeholder="Ej: 45.50" />
+                        <button onclick="saveBcvRateFromAdmin()" class="px-4 py-2.5 bg-black text-white text-xs font-bold uppercase rounded-xl hover:bg-gray-800 transition whitespace-nowrap">
+                            Actualizar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 2. Datos de Métodos de Pago -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 space-y-3">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="credit-card" class="w-5 h-5"></i>
+                        <h3 class="font-brand text-base font-extrabold uppercase">Datos de Pago</h3>
+                    </div>
+                    <div class="space-y-2">
+                        <div>
+                            <label class="text-[10px] font-bold uppercase text-gray-500">Pago Móvil (Banco, Tlf, C.I.)</label>
+                            <input id="adminPagoMovilInput" type="text" class="w-full px-3 py-1.5 border border-gray-200 rounded-lg text-xs" />
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label class="text-[10px] font-bold uppercase text-gray-500">Zelle (Correo / Titular)</label>
+                                <input id="adminZelleInput" type="text" class="w-full px-3 py-1.5 border border-gray-200 rounded-lg text-xs" />
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-bold uppercase text-gray-500">Binance Pay (Correo / ID)</label>
+                                <input id="adminBinanceInput" type="text" class="w-full px-3 py-1.5 border border-gray-200 rounded-lg text-xs" />
+                            </div>
+                        </div>
+                        <button onclick="savePaymentDetailsFromAdmin()" class="w-full py-2 bg-gray-900 text-white text-xs font-bold uppercase rounded-xl hover:bg-black transition">
+                            Guardar Datos de Pago
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 3. Subir Logo Oficial -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 flex flex-col justify-between space-y-3">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="image" class="w-5 h-5"></i>
+                            <h3 class="font-brand text-base font-extrabold uppercase">Logo de la Marca</h3>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">Sube la imagen original de tu logo AMOR ESTILO ❁ FE desde tu galería o usa la versión vectorial integrada.</p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-2">
+                        <label class="cursor-pointer px-4 py-2.5 bg-gray-100 hover:bg-gray-200 text-xs font-bold uppercase rounded-xl transition text-center flex-grow">
+                            Subir Archivo de Logo
+                            <input type="file" accept="image/*" class="hidden" onchange="handleLogoUpload(event)" />
+                        </label>
+                        <button onclick="resetCustomLogo()" class="text-xs text-gray-500 underline hover:text-black">Restaurar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid Principal Admin: Formulario + Inventario -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- Formulario de Carga / Edición de Prendas -->
+                <div class="lg:col-span-5">
+                    <form id="productForm" onsubmit="saveProductFromForm(event)" class="bg-white p-6 rounded-2xl border border-gray-200 space-y-4 sticky top-24">
+                        <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+                            <h2 id="formTitle" class="font-brand text-lg font-extrabold uppercase">➕ Cargar Nueva Prenda</h2>
+                            <button type="button" id="cancelEditBtn" onclick="resetProductForm()" class="hidden text-xs text-red-600 font-semibold hover:underline">Cancelar edición</button>
+                        </div>
+
+                        <input type="hidden" id="prodId" value="" />
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider mb-1">Nombre de la Prenda *</label>
+                            <input id="prodName" type="text" required placeholder="Ej: Franela Oversize JHS Blanca" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:border-black" />
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider mb-1">Precio (USD $) *</label>
+                                <input id="prodPrice" type="number" step="0.01" min="0" required placeholder="25.00" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:border-black" />
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider mb-1">Estado / Etiqueta</label>
+                                <select id="prodBadge" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:border-black bg-white">
+                                    <option value="Disponible">Disponible</option>
+                                    <option value="Nuevo">Nuevo</option>
+                                    <option value="Oferta">Oferta</option>
+                                    <option value="Agotado">Agotado</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider mb-1">Categoría *</label>
+                            <select id="prodCategory" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:border-black bg-white">
+                                <option value="Franelas con Propósito">Franelas con Propósito (JHS)</option>
+                                <option value="Conjuntos">Conjuntos</option>
+                                <option value="Vestidos">Vestidos</option>
+                                <option value="Blusas & Tops">Blusas & Tops</option>
+                                <option value="Oversize & Urbano">Oversize & Urbano</option>
+                                <option value="Accesorios">Accesorios</option>
+                            </select>
+                        </div>
+
+                        <!-- Subida de Foto o URL -->
+                        <div class="space-y-2">
+                            <label class="block text-xs font-bold uppercase tracking-wider">Foto de la Prenda *</label>
+                            <label class="flex items-center justify-center gap-2 w-full py-3 px-4 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-black transition text-xs font-semibold text-gray-600">
+                                <i data-lucide="upload" class="w-4 h-4"></i>
+                                <span>Subir foto desde mi celular / PC</span>
+                                <input type="file" accept="image/*" class="hidden" onchange="handleProductImageUpload(event)" />
+                            </label>
+                            <input id="prodImage" type="text" placeholder="O pega aquí el enlace (URL) de la imagen..." class="w-full px-3.5 py-2 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-black" />
+                            <div id="prodImagePreviewContainer" class="hidden pt-1">
+                                <img id="prodImagePreview" src="" alt="Previsualización" class="h-24 w-20 object-cover rounded-lg border" />
+                            </div>
+                        </div>
+
+                        <!-- Tallas Disponibles -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider mb-2">Tallas Disponibles *</label>
+                            <div class="flex flex-wrap gap-2">
+                                <label class="inline-flex items-center gap-1.5 px-3 py-1.5 border rounded-lg text-xs font-semibold cursor-pointer">
+                                    <input type="checkbox" value="XS" class="prod-size-cb accent-black"> XS
+                                </label>
+                                <label class="inline-flex items-center gap-1.5 px-3 py-1.5 border rounded-lg text-xs font-semibold cursor-pointer">
+                                    <input type="checkbox" value="S" checked class="prod-size-cb accent-black"> S
+                                </label>
+                                <label class="inline-flex items-center gap-1.5 px-3 py-1.5 border rounded-lg text-xs font-semibold cursor-pointer">
+                                    <input type="checkbox" value="M" checked class="prod-size-cb accent-black"> M
+                                </label>
+                                <label class="inline-flex items-center gap-1.5 px-3 py-1.5 border rounded-lg text-xs font-semibold cursor-pointer">
+                                    <input type="checkbox" value="L" checked class="prod-size-cb accent-black"> L
+                                </label>
+                                <label class="inline-flex items-center gap-1.5 px-3 py-1.5 border rounded-lg text-xs font-semibold cursor-pointer">
+                                    <input type="checkbox" value="XL" class="prod-size-cb accent-black"> XL
+                                </label>
+                                <label class="inline-flex items-center gap-1.5 px-3 py-1.5 border rounded-lg text-xs font-semibold cursor-pointer">
+                                    <input type="checkbox" value="OVERSIZE" class="prod-size-cb accent-black"> OVERSIZE
+                                </label>
+                                <label class="inline-flex items-center gap-1.5 px-3 py-1.5 border rounded-lg text-xs font-semibold cursor-pointer">
+                                    <input type="checkbox" value="Única" class="prod-size-cb accent-black"> Única
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 bg-black text-white text-xs font-bold uppercase tracking-[0.2em] rounded-xl hover:bg-gray-800 transition">
+                            Guardar Prenda en el Catálogo
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Lista de Inventario Actual -->
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-gray-100">
+                            <div>
+                                <h2 class="font-brand text-lg font-extrabold uppercase">📦 Inventario Actual (<span id="adminTotalProducts">0</span>)</h2>
+                                <p class="text-xs text-gray-500">Edita, marca como agotado o elimina prendas cuando quieras.</p>
+                            </div>
+                            <button onclick="exportCatalogJSON()" class="px-3.5 py-2 bg-gray-100 hover:bg-gray-200 text-xs font-bold rounded-xl transition flex items-center gap-1.5 self-start sm:self-auto">
+                                <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copiar Catálogo JSON
+                            </button>
+                        </div>
+
+                        <div id="adminProductsList" class="divide-y divide-gray-100 mt-2"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         MODAL DE GUÍA DE TALLAS INTERACTIVA
+    ========================================================== -->
+    <div id="sizeGuideModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-xl rounded-3xl shadow-2xl overflow-hidden fade-in">
+            <div class="p-6 border-b border-gray-100 flex items-center justify-between bg-black text-white">
+                <div class="flex items-center gap-2.5">
+                    <i data-lucide="ruler" class="w-5 h-5"></i>
+                    <div>
+                        <h3 class="font-brand text-lg font-extrabold uppercase">Guía de Tallas Oficial</h3>
+                        <p class="text-[11px] text-gray-300">AMOR • ESTILO ❁ FE (Medidas referenciales en centímetros)</p>
+                    </div>
+                </div>
+                <button onclick="closeSizeGuideModal()" class="p-2 text-gray-300 hover:text-white rounded-full">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="p-6 space-y-5 max-h-[80vh] overflow-y-auto">
+                <div class="overflow-x-auto border border-gray-200 rounded-2xl">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-gray-100 text-black font-bold uppercase tracking-wider">
+                                <th class="py-3 px-4">Talla</th>
+                                <th class="py-3 px-4">Busto / Pecho</th>
+                                <th class="py-3 px-4">Cintura</th>
+                                <th class="py-3 px-4">Cadera</th>
+                                <th class="py-3 px-4">Largo Franela</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100 font-medium text-gray-700">
+                            <tr>
+                                <td class="py-3 px-4 font-bold text-black">XS</td>
+                                <td class="py-3 px-4">80 - 84 cm</td>
+                                <td class="py-3 px-4">60 - 64 cm</td>
+                                <td class="py-3 px-4">86 - 90 cm</td>
+                                <td class="py-3 px-4">60 cm</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-bold text-black">S</td>
+                                <td class="py-3 px-4">85 - 90 cm</td>
+                                <td class="py-3 px-4">65 - 70 cm</td>
+                                <td class="py-3 px-4">91 - 96 cm</td>
+                                <td class="py-3 px-4">63 cm</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-bold text-black">M</td>
+                                <td class="py-3 px-4">91 - 96 cm</td>
+                                <td class="py-3 px-4">71 - 76 cm</td>
+                                <td class="py-3 px-4">97 - 102 cm</td>
+                                <td class="py-3 px-4">66 cm</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-bold text-black">L</td>
+                                <td class="py-3 px-4">97 - 103 cm</td>
+                                <td class="py-3 px-4">77 - 83 cm</td>
+                                <td class="py-3 px-4">103 - 109 cm</td>
+                                <td class="py-3 px-4">69 cm</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-bold text-black">XL</td>
+                                <td class="py-3 px-4">104 - 110 cm</td>
+                                <td class="py-3 px-4">84 - 90 cm</td>
+                                <td class="py-3 px-4">110 - 116 cm</td>
+                                <td class="py-3 px-4">72 cm</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="py-3 px-4 font-bold text-black">OVERSIZE</td>
+                                <td class="py-3 px-4">110 - 120 cm</td>
+                                <td class="py-3 px-4">Corte holgado</td>
+                                <td class="py-3 px-4">Corte holgado</td>
+                                <td class="py-3 px-4">74 cm</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="p-4 bg-gray-50 rounded-2xl border border-gray-100 flex items-center justify-between gap-4">
+                    <p class="text-xs text-gray-600">¿Tienes dudas con el entalle de una prenda específica? Escríbenos y te asesoramos al instante.</p>
+                    <a href="https://wa.me/584248048979?text=Hola%20Amor%20Estilo%20Fe,%20necesito%20ayuda%20para%20elegir%20mi%20talla" target="_blank" class="px-4 py-2.5 bg-black text-white text-[11px] font-bold uppercase tracking-wider rounded-xl whitespace-nowrap">
+                        Consultar Talla
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================
+         MODAL DE INICIO DE SESIÓN ÚNICO (SIN PESTAÑAS DE ADMIN)
+    ========================================================== -->
+    <div id="authModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-md rounded-3xl shadow-2xl overflow-hidden fade-in">
+            <div class="p-6 pb-4 flex items-center justify-between border-b border-gray-100">
+                <div class="flex flex-col">
+                    <span class="font-brand font-extrabold text-xl tracking-tight">AMOR ESTILO ❁ FE</span>
+                    <span class="text-xs text-gray-500">Acceso a tu cuenta</span>
+                </div>
+                <button onclick="closeAuthModal()" class="p-2 text-gray-400 hover:text-black rounded-full hover:bg-gray-100">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="p-6">
+                <div id="authTabsHeader" class="flex justify-center gap-8 border-b border-gray-100 pb-3 mb-5 text-sm font-bold">
+                    <button id="subTabLogin" onclick="switchClientAuthMode('login')" class="text-black border-b-2 border-black pb-2">Iniciar Sesión</button>
+                    <button id="subTabRegister" onclick="switchClientAuthMode('register')" class="text-gray-400 pb-2 hover:text-black">Crear Cuenta</button>
+                </div>
+
+                <!-- Formulario Único de Inicio de Sesión -->
+                <form id="unifiedLoginForm" onsubmit="handleUnifiedLogin(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider mb-1">Correo Electrónico</label>
+                        <input id="loginEmail" type="email" required placeholder="tu@correo.com" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-black" />
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider mb-1">Contraseña</label>
+                        <input id="loginPassword" type="password" required placeholder="••••••••" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-black" />
+                    </div>
+                    <button type="submit" class="w-full py-3.5 bg-black text-white text-xs font-bold uppercase tracking-[0.2em] rounded-xl hover:bg-gray-800 transition">
+                        Entrar a mi cuenta
+                    </button>
+                </form>
+
+                <!-- Formulario de Registro de Nuevos Clientes -->
+                <form id="clientRegisterForm" onsubmit="handleClientRegister(event)" class="hidden space-y-3.5">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider mb-1">Nombre y Apellido *</label>
+                        <input id="regName" type="text" required placeholder="Ej: María Pérez" class="w-full px-3.5 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-black" />
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider mb-1">Correo *</label>
+                            <input id="regEmail" type="email" required placeholder="maria@correo.com" class="w-full px-3.5 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-black" />
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider mb-1">WhatsApp *</label>
+                            <input id="regPhone" type="tel" required placeholder="+58 412..." class="w-full px-3.5 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-black" />
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider mb-1">Ciudad / Dirección de Envío *</label>
+                        <input id="regAddress" type="text" required placeholder="Ej: Barcelona / Lechería, Anzoátegui" class="w-full px-3.5 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-black" />
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider mb-1">Contraseña *</label>
+                        <input id="regPassword" type="password" required placeholder="Mínimo 4 caracteres" class="w-full px-3.5 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-black" />
+                    </div>
+                    <button type="submit" class="w-full py-3.5 bg-black text-white text-xs font-bold uppercase tracking-[0.2em] rounded-xl hover:bg-gray-800 transition">
+                        Registrarme
+                    </button>
+                </form>
+
+                <!-- Vista de Perfil cuando el Cliente ya inició sesión -->
+                <div id="loggedClientProfileView" class="hidden space-y-4">
+                    <div class="p-4 bg-gray-50 rounded-2xl border border-gray-100 space-y-1">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Cliente Registrado</span>
+                        <h3 id="profileName" class="font-brand text-lg font-bold"></h3>
+                        <p id="profileEmail" class="text-xs text-gray-600"></p>
+                        <p id="profilePhone" class="text-xs text-gray-600"></p>
+                        <p id="profileAddress" class="text-xs text-gray-600"></p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-wider mb-2">Mis Últimos Pedidos</h4>
+                        <div id="clientOrdersHistory" class="max-h-40 overflow-y-auto space-y-2 text-xs text-gray-600"></div>
+                    </div>
+                    <button onclick="logoutUser()" class="w-full py-3 border border-red-200 text-red-600 text-xs font-bold uppercase tracking-wider rounded-xl hover:bg-red-50 transition">
+                        Cerrar Sesión
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================
+         MODAL DE FAVORITOS (WISHLIST)
+    ========================================================== -->
+    <div id="wishlistModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden fade-in">
+            <div class="p-6 flex items-center justify-between border-b border-gray-100">
+                <h3 class="font-brand text-lg font-extrabold uppercase">♡ Mis Prendas Favoritas</h3>
+                <button onclick="closeWishlistModal()" class="p-2 text-gray-400 hover:text-black rounded-full">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div id="wishlistContainer" class="p-6 max-h-96 overflow-y-auto divide-y divide-gray-100"></div>
+        </div>
+    </div>
+
+    <!-- =========================================================
+         CARRITO LATERAL CON CALCULADORA BCV Y MÉTODOS DE PAGO
+    ========================================================== -->
+    <div id="cartDrawerOverlay" onclick="toggleCartDrawer(false)" class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-xs"></div>
+    <aside id="cartDrawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-md bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="p-5 border-b border-gray-100 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                <h3 class="font-brand text-lg font-extrabold uppercase">Tu Carrito</h3>
+            </div>
+            <button onclick="toggleCartDrawer(false)" class="p-2 text-gray-400 hover:text-black rounded-full">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <!-- Lista de items -->
+        <div id="cartItemsList" class="flex-grow overflow-y-auto p-5 divide-y divide-gray-100"></div>
+
+        <!-- Sección Inferior: Métodos de Pago, Conversión BCV y Datos de Envío -->
+        <div class="p-5 border-t border-gray-200 bg-gray-50 space-y-3.5 max-h-[60vh] overflow-y-auto">
+            
+            <!-- Selector de Método de Pago -->
+            <div>
+                <p class="text-[11px] font-bold uppercase tracking-wider text-gray-600 mb-1.5">1. Selecciona tu Método de Pago:</p>
+                <div class="grid grid-cols-2 gap-1.5" id="paymentMethodsGrid">
+                    <button type="button" onclick="selectPaymentMethod('Pago Móvil')" class="pay-method-btn px-3 py-2 rounded-xl text-xs font-bold border transition text-left flex items-center justify-between bg-black text-white border-black" data-method="Pago Móvil">
+                        <span>📱 Pago Móvil</span>
+                    </button>
+                    <button type="button" onclick="selectPaymentMethod('Binance Pay')" class="pay-method-btn px-3 py-2 rounded-xl text-xs font-bold border transition text-left flex items-center justify-between bg-white text-gray-700 border-gray-200" data-method="Binance Pay">
+                        <span>🟡 Binance</span>
+                    </button>
+                    <button type="button" onclick="selectPaymentMethod('Zelle')" class="pay-method-btn px-3 py-2 rounded-xl text-xs font-bold border transition text-left flex items-center justify-between bg-white text-gray-700 border-gray-200" data-method="Zelle">
+                        <span>💵 Zelle</span>
+                    </button>
+                    <button type="button" onclick="selectPaymentMethod('Efectivo USD')" class="pay-method-btn px-3 py-2 rounded-xl text-xs font-bold border transition text-left flex items-center justify-between bg-white text-gray-700 border-gray-200" data-method="Efectivo USD">
+                        <span>🤝 Efectivo</span>
+                    </button>
+                </div>
+                <!-- Cuadro informativo con los datos del método elegido -->
+                <div id="selectedPaymentInfoBox" class="mt-2 p-2.5 bg-white border border-gray-200 rounded-xl text-[11px] text-gray-700"></div>
+            </div>
+
+            <!-- Datos del Cliente -->
+            <div class="space-y-1.5">
+                <p class="text-[11px] font-bold uppercase tracking-wider text-gray-600">2. Datos de Entrega:</p>
+                <input id="checkoutClientName" type="text" placeholder="Tu Nombre y Apellido" class="w-full px-3 py-2 bg-white border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-black" />
+                <input id="checkoutClientAddress" type="text" placeholder="Ciudad / Dirección de entrega" class="w-full px-3 py-2 bg-white border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-black" />
+            </div>
+
+            <!-- Totales en USD y Bolívares (BCV) -->
+            <div class="bg-white p-3.5 rounded-2xl border border-gray-200 space-y-1">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold uppercase text-gray-500">Total en Dólares:</span>
+                    <span id="cartTotalAmount" class="font-brand text-xl font-extrabold text-black">$0.00</span>
+                </div>
+                <div class="flex items-center justify-between border-t border-gray-100 pt-1">
+                    <span class="text-[11px] font-semibold text-gray-500">Total en Bolívares (BCV):</span>
+                    <span id="cartTotalAmountBs" class="text-sm font-extrabold text-[#7E57C2]">Bs. 0.00</span>
+                </div>
+            </div>
+
+            <button onclick="sendOrderToWhatsApp()" class="w-full py-3.5 bg-black text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-gray-800 transition flex items-center justify-center gap-2 shadow-lg">
+                <i data-lucide="send" class="w-4 h-4"></i> Enviar Pedido a WhatsApp
+            </button>
+        </div>
+    </aside>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/584248048979?text=Hola%20Amor%20Estilo%20Fe,%20vengo%20de%20su%20página%20web%20y%20me%20gustaría%20recibir%20información" target="_blank" class="fixed bottom-6 right-6 z-40 bg-[#25D366] text-white p-4 rounded-full shadow-xl hover:scale-105 transition flex items-center gap-2 group">
+        <i data-lucide="message-circle" class="w-6 h-6 fill-white"></i>
+        <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 text-xs font-bold whitespace-nowrap">WhatsApp +58 424-8048979</span>
+    </a>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-white py-12 border-t border-gray-900 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="text-center sm:text-left">
+                <p class="font-brand text-xl font-extrabold tracking-wider">AMOR • ESTILO ❁ FE <span class="text-xs font-normal opacity-75">(JHS)</span></p>
+                <p class="text-xs text-gray-400 mt-1">Moda con propósito, estilo y fe.</p>
+            </div>
+            <div class="flex items-center gap-6 text-xs font-semibold uppercase tracking-widest">
+                <button onclick="openSizeGuideModal()" class="hover:text-gray-300 uppercase">Guía de Tallas</button>
+                <a href="https://www.instagram.com/amor_estilo.fe/" target="_blank" class="hover:text-gray-300">Instagram</a>
+                <a href="https://wa.me/584248048979" target="_blank" class="hover:text-gray-300">WhatsApp</a>
+            </div>
+            <p class="text-xs text-gray-500">© 2026 Amor Estilo Fe. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed bottom-6 left-6 z-50 hidden bg-black text-white text-xs font-semibold px-5 py-3.5 rounded-2xl shadow-xl items-center gap-2">
+        <span id="toastMsg"></span>
+    </div>
+
+    <!-- =========================================================
+         JAVASCRIPT PRINCIPAL Y BASE DE DATOS
+    ========================================================== -->
+    <script>
+        const WHATSAPP_NUMBER = "584248048979";
+
+        // Credenciales privadas del Administrador (Acceso desde el login único)
+        const ADMIN_CREDENTIALS = {
+            email: "admin@amorestilofe.com",
+            password: "AdminJHS2026*"
+        };
+
+        // Configuración por defecto de Tasa BCV y Métodos de Pago
+        let bcvRate = parseFloat(localStorage.getItem("aef_bcv_rate")) || 45.00;
+        let paymentDetails = JSON.parse(localStorage.getItem("aef_payment_details")) || {
+            pagoMovil: "Tlf: 0424-8048979 | Solicitar Banco y C.I. al confirmar",
+            zelle: "Consultar correo Zelle al enviar pedido",
+            binance: "Pay ID / Correo disponible al confirmar",
+            efectivo: "Pago en divisas al momento de la entrega personal"
+        };
+        let selectedPaymentMethod = "Pago Móvil";
+
+        // =========================================================================
+        // === ESPACIO EXCLUSIVO PARA CARGAR TUS PRODUCTOS FIJOS EN EL CÓDIGO ===
+        // =========================================================================
+        const productosIniciales = [
+            {
+                id: "aef-1",
+                name: "Franela Oversize AMOR ESTILO ❁ FE (JHS)",
+                price: 22.00,
+                category: "Franelas con Propósito",
+                image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80",
+                sizes: ["S", "M", "L", "OVERSIZE"],
+                badge: "Nuevo"
+            },
+            {
+                id: "aef-2",
+                name: "Conjunto Lino Minimalista Blanco",
+                price: 38.00,
+                category: "Conjuntos",
+                image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80",
+                sizes: ["S", "M", "L"],
+                badge: "Disponible"
+            },
+            {
+                id: "aef-3",
+                name: "Vestido Midi Elegancia & Gracia",
+                price: 35.00,
+                category: "Vestidos",
+                image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=80",
+                sizes: ["S", "M", "L"],
+                badge: "Nuevo"
+            },
+            {
+                id: "aef-4",
+                name: "Blusa Satén Delicada",
+                price: 20.00,
+                category: "Blusas & Tops",
+                image: "https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=800&q=80",
+                sizes: ["XS", "S", "M", "L"],
+                badge: "Disponible"
+            },
+            {
+                id: "aef-5",
+                name: "T-Shirt Básica JHS Edición Negra",
+                price: 20.00,
+                category: "Franelas con Propósito",
+                image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
+                sizes: ["S", "M", "L", "OVERSIZE"],
+                badge: "Oferta"
+            },
+            {
+                id: "aef-6",
+                name: "Conjunto Casual Urbano Monocromático",
+                price: 42.00,
+                category: "Oversize & Urbano",
+                image: "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=800&q=80",
+                sizes: ["S", "M", "L"],
+                badge: "Disponible"
+            }
+        ];
+
+        // Estado Global
+        let products = JSON.parse(localStorage.getItem("aef_products")) || productosIniciales;
+        let cart = JSON.parse(localStorage.getItem("aef_cart")) || [];
+        let wishlist = JSON.parse(localStorage.getItem("aef_wishlist")) || [];
+        let registeredClients = JSON.parse(localStorage.getItem("aef_clients")) || [];
+        let currentSession = JSON.parse(localStorage.getItem("aef_session")) || null;
+        let selectedCategory = "Todos";
+        let uploadedProductBase64 = "";
+
+        const categoriesList = ["Todos", "Franelas con Propósito", "Conjuntos", "Vestidos", "Blusas & Tops", "Oversize & Urbano", "Accesorios"];
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadCustomLogo();
+            updateBcvBadges();
+            renderCategories();
+            renderCatalog();
+            selectPaymentMethod(selectedPaymentMethod);
+            updateCartUI();
+            updateWishlistUI();
+            updateAuthUI();
+            lucide.createIcons();
+        });
+
+        function formatBs(usdAmount) {
+            const bs = Number(usdAmount) * bcvRate;
+            return "Bs. " + bs.toLocaleString("es-VE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        function updateBcvBadges() {
+            const formattedRate = "Bs. " + bcvRate.toLocaleString("es-VE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            document.getElementById("topBarBcvRate").textContent = formattedRate;
+            document.getElementById("catalogBcvBadge").textContent = formattedRate;
+            const adminInput = document.getElementById("adminBcvInput");
+            if (adminInput) adminInput.value = bcvRate;
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+            document.getElementById("toastMsg").textContent = message;
+            toast.classList.remove("hidden");
+            toast.classList.add("flex");
+            setTimeout(() => {
+                toast.classList.add("hidden");
+                toast.classList.remove("flex");
+            }, 3000);
+        }
+
+        // ==========================================
+        // GUÍA DE TALLAS INTERACTIVA
+        // ==========================================
+        function openSizeGuideModal() {
+            document.getElementById("sizeGuideModal").classList.remove("hidden");
+        }
+
+        function closeSizeGuideModal() {
+            document.getElementById("sizeGuideModal").classList.add("hidden");
+        }
+
+        // ==========================================
+        // CATÁLOGO CON CONVERSIÓN AUTOMÁTICA A BOLÍVARES
+        // ==========================================
+        function renderCategories() {
+            const container = document.getElementById("categoryFilters");
+            container.innerHTML = categoriesList.map(cat => {
+                const active = cat === selectedCategory;
+                return `
+                    <button onclick="selectCategory('${cat}')" class="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider whitespace-nowrap transition ${active ? 'bg-black text-white shadow-sm' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}">
+                        ${cat}
+                    </button>
+                `;
+            }).join("");
+        }
+
+        function selectCategory(cat) {
+            selectedCategory = cat;
+            renderCategories();
+            renderCatalog();
+        }
+
+        function renderCatalog() {
+            const grid = document.getElementById("productsGrid");
+            const query = (document.getElementById("searchInput")?.value || "").toLowerCase();
+
+            const filtered = products.filter(p => {
+                const matchCat = selectedCategory === "Todos" || p.category === selectedCategory;
+                const matchQuery = p.name.toLowerCase().includes(query) || p.category.toLowerCase().includes(query);
+                return matchCat && matchQuery;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-16 text-gray-400 text-sm">No se encontraron prendas en esta categoría.</div>`;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(prod => {
+                const isFav = wishlist.includes(prod.id);
+                const isSoldOut = prod.badge === "Agotado";
+                const badgeColors = {
+                    "Nuevo": "bg-black text-white",
+                    "Oferta": "bg-[#7E57C2] text-white",
+                    "Agotado": "bg-red-600 text-white",
+                    "Disponible": "bg-white/90 text-black"
+                };
+
+                return `
+                    <div class="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition flex flex-col">
+                        <div class="relative aspect-[3/4] bg-gray-100 overflow-hidden">
+                            <img src="${prod.image}" alt="${prod.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 ${isSoldOut ? 'opacity-50 grayscale' : ''}" />
+                            <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest ${badgeColors[prod.badge] || 'bg-white text-black'}">
+                                ${prod.badge}
+                            </span>
+                            <button onclick="toggleWishlist('${prod.id}')" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 flex items-center justify-center hover:scale-110 transition">
+                                <i data-lucide="heart" class="w-4 h-4 ${isFav ? 'fill-black text-black' : 'text-gray-700'}"></i>
+                            </button>
+                        </div>
+
+                        <div class="p-4 flex-grow flex flex-col justify-between space-y-4">
+                            <div>
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">${prod.category}</span>
+                                <h3 class="font-bold text-sm mt-0.5 line-clamp-2">${prod.name}</h3>
+                                <div class="mt-1.5 flex items-baseline gap-2">
+                                    <span class="font-brand text-lg font-extrabold">$${Number(prod.price).toFixed(2)}</span>
+                                    <span class="text-xs font-semibold text-gray-500">(${formatBs(prod.price)})</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2.5">
+                                <div class="flex items-center justify-between gap-2">
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="text-[11px] font-semibold text-gray-500">Talla:</span>
+                                        <button type="button" onclick="openSizeGuideModal()" class="text-[11px] font-bold text-black underline hover:text-gray-600">📏 Guía</button>
+                                    </div>
+                                    <select id="size-${prod.id}" ${isSoldOut ? 'disabled' : ''} class="px-2.5 py-1 border border-gray-200 rounded-lg text-xs font-bold bg-white focus:outline-none focus:border-black">
+                                        ${prod.sizes.map(s => `<option value="${s}">${s}</option>`).join("")}
+                                    </select>
+                                </div>
+
+                                <div class="grid grid-cols-1 gap-2">
+                                    <button onclick="addToCart('${prod.id}')" ${isSoldOut ? 'disabled' : ''} class="w-full py-2.5 bg-black text-white text-[11px] font-bold uppercase tracking-wider rounded-xl hover:bg-gray-800 transition disabled:bg-gray-300">
+                                        ${isSoldOut ? 'Agotado' : 'Añadir al Carrito'}
+                                    </button>
+                                    <button onclick="buyDirectWhatsApp('${prod.id}')" ${isSoldOut ? 'disabled' : ''} class="w-full py-2 bg-gray-100 text-black text-[11px] font-bold uppercase tracking-wider rounded-xl hover:bg-gray-200 transition disabled:opacity-50">
+                                        Pedir por WhatsApp
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join("");
+
+            lucide.createIcons();
+        }
+
+        // ==========================================
+        // CARRITO, MÉTODOS DE PAGO Y ENVÍO A WHATSAPP
+        // ==========================================
+        function selectPaymentMethod(method) {
+            selectedPaymentMethod = method;
+            document.querySelectorAll(".pay-method-btn").forEach(btn => {
+                if (btn.dataset.method === method) {
+                    btn.className = "pay-method-btn px-3 py-2 rounded-xl text-xs font-bold border transition text-left flex items-center justify-between bg-black text-white border-black";
+                } else {
+                    btn.className = "pay-method-btn px-3 py-2 rounded-xl text-xs font-bold border transition text-left flex items-center justify-between bg-white text-gray-700 border-gray-200 hover:border-black";
+                }
+            });
+
+            const infoBox = document.getElementById("selectedPaymentInfoBox");
+            if (method === "Pago Móvil") {
+                infoBox.innerHTML = `<b>Datos Pago Móvil:</b> ${paymentDetails.pagoMovil}`;
+            } else if (method === "Zelle") {
+                infoBox.innerHTML = `<b>Datos Zelle:</b> ${paymentDetails.zelle}`;
+            } else if (method === "Binance Pay") {
+                infoBox.innerHTML = `<b>Datos Binance Pay:</b> ${paymentDetails.binance}`;
+            } else {
+                infoBox.innerHTML = `<b>Efectivo:</b> ${paymentDetails.efectivo}`;
+            }
+        }
+
+        function addToCart(prodId) {
+            const prod = products.find(p => p.id === prodId);
+            if (!prod) return;
+            const sizeSelect = document.getElementById(`size-${prodId}`);
+            const chosenSize = sizeSelect ? sizeSelect.value : prod.sizes[0];
+
+            const existing = cart.find(item => item.id === prodId && item.size === chosenSize);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({
+                    id: prod.id,
+                    name: prod.name,
+                    price: Number(prod.price),
+                    image: prod.image,
+                    size: chosenSize,
+                    qty: 1
+                });
+            }
+            saveCart();
+            updateCartUI();
+            showToast(`"${prod.name}" (Talla ${chosenSize}) añadido al carrito`);
+        }
+
+        function changeCartQty(index, delta) {
+            cart[index].qty += delta;
+            if (cart[index].qty <= 0) cart.splice(index, 1);
+            saveCart();
+            updateCartUI();
+        }
+
+        function saveCart() {
+            localStorage.setItem("aef_cart", JSON.stringify(cart));
+        }
+
+        function updateCartUI() {
+            const countEl = document.getElementById("cartCount");
+            const listEl = document.getElementById("cartItemsList");
+            const totalEl = document.getElementById("cartTotalAmount");
+            const totalBsEl = document.getElementById("cartTotalAmountBs");
+
+            const totalItems = cart.reduce((acc, item) => acc + item.qty, 0);
+            const totalPrice = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+
+            countEl.textContent = totalItems;
+            totalEl.textContent = `$${totalPrice.toFixed(2)}`;
+            totalBsEl.textContent = formatBs(totalPrice);
+
+            if (currentSession && currentSession.role === "client") {
+                document.getElementById("checkoutClientName").value = currentSession.name || "";
+                document.getElementById("checkoutClientAddress").value = currentSession.address || "";
+            }
+
+            if (cart.length === 0) {
+                listEl.innerHTML = `<p class="text-center text-gray-400 text-xs py-12">Tu carrito está vacío.</p>`;
+                return;
+            }
+
+            listEl.innerHTML = cart.map((item, idx) => `
+                <div class="py-3.5 flex items-center gap-3">
+                    <img src="${item.image}" class="w-14 h-16 object-cover rounded-lg border" />
+                    <div class="flex-grow">
+                        <h4 class="text-xs font-bold line-clamp-1">${item.name}</h4>
+                        <p class="text-[11px] text-gray-500">Talla: <b>${item.size}</b> • $${item.price.toFixed(2)} (${formatBs(item.price)})</p>
+                        <div class="flex items-center gap-2 mt-1.5">
+                            <button onclick="changeCartQty(${idx}, -1)" class="w-6 h-6 rounded bg-gray-100 text-xs font-bold">-</button>
+                            <span class="text-xs font-bold">${item.qty}</span>
+                            <button onclick="changeCartQty(${idx}, 1)" class="w-6 h-6 rounded bg-gray-100 text-xs font-bold">+</button>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-xs font-extrabold block">$${(item.price * item.qty).toFixed(2)}</span>
+                        <span class="text-[10px] text-gray-500">${formatBs(item.price * item.qty)}</span>
+                    </div>
+                </div>
+            `).join("");
+        }
+
+        function toggleCartDrawer(open) {
+            const overlay = document.getElementById("cartDrawerOverlay");
+            const drawer = document.getElementById("cartDrawer");
+            if (open) {
+                overlay.classList.remove("hidden");
+                drawer.classList.remove("translate-x-full");
+            } else {
+                overlay.classList.add("hidden");
+                drawer.classList.add("translate-x-full");
+            }
+        }
+
+        function buyDirectWhatsApp(prodId) {
+            const prod = products.find(p => p.id === prodId);
+            if (!prod) return;
+            const size = document.getElementById(`size-${prodId}`)?.value || prod.sizes[0];
+            let clientInfo = "";
+            if (currentSession && currentSession.role === "client") {
+                clientInfo = `\n\n👤 *Cliente:* ${currentSession.name}\n📍 *Dirección:* ${currentSession.address}`;
+            }
+            const text = `¡Hola *Amor Estilo Fe*! ❁ Me interesa pedir esta prenda:\n\n• *${prod.name}*\n• Talla: *${size}*\n• Precio: *$${Number(prod.price).toFixed(2)}* (${formatBs(prod.price)} a tasa BCV)${clientInfo}`;
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank");
+        }
+
+        function sendOrderToWhatsApp() {
+            if (cart.length === 0) {
+                showToast("Agrega al menos una prenda al carrito");
+                return;
+            }
+            const name = document.getElementById("checkoutClientName").value.trim() || "Cliente Web";
+            const address = document.getElementById("checkoutClientAddress").value.trim() || "Por confirmar";
+            const total = cart.reduce((acc, i) => acc + (i.price * i.qty), 0);
+
+            const itemsLines = cart.map(i => `• ${i.qty}x ${i.name} (Talla: ${i.size}) - $${(i.price * i.qty).toFixed(2)}`).join("\n");
+
+            const message = `¡Hola *Amor Estilo Fe (JHS)*! ❁ Quiero realizar el siguiente pedido:\n\n${itemsLines}\n\n💵 *Total en Divisas: $${total.toFixed(2)}*\n🇻🇪 *Total en Bolívares (BCV Bs. ${bcvRate.toFixed(2)}): ${formatBs(total)}*\n💳 *Método de Pago:* ${selectedPaymentMethod}\n\n👤 *Cliente:* ${name}\n📍 *Envío:* ${address}`;
+
+            if (currentSession && currentSession.role === "client") {
+                currentSession.orders = currentSession.orders || [];
+                currentSession.orders.unshift({
+                    date: new Date().toLocaleDateString(),
+                    total: total.toFixed(2),
+                    items: cart.length
+                });
+                localStorage.setItem("aef_session", JSON.stringify(currentSession));
+            }
+
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
+        }
+
+        // ==========================================
+        // SISTEMA DE INICIO DE SESIÓN ÚNICO
+        // ==========================================
+        function handleUserButtonClick() {
+            openAuthModal();
+        }
+
+        function openAuthModal() {
+            document.getElementById("authModal").classList.remove("hidden");
+            const tabsHeader = document.getElementById("authTabsHeader");
+            const loginForm = document.getElementById("unifiedLoginForm");
+            const registerForm = document.getElementById("clientRegisterForm");
+            const profileView = document.getElementById("loggedClientProfileView");
+
+            if (currentSession && currentSession.role === "client") {
+                tabsHeader.classList.add("hidden");
+                loginForm.classList.add("hidden");
+                registerForm.classList.add("hidden");
+                profileView.classList.remove("hidden");
+
+                document.getElementById("profileName").textContent = currentSession.name;
+                document.getElementById("profileEmail").textContent = currentSession.email;
+                document.getElementById("profilePhone").textContent = `WhatsApp: ${currentSession.phone}`;
+                document.getElementById("profileAddress").textContent = `Dirección: ${currentSession.address}`;
+
+                const historyEl = document.getElementById("clientOrdersHistory");
+                const orders = currentSession.orders || [];
+                historyEl.innerHTML = orders.length
+                    ? orders.map(o => `<div class="p-2.5 bg-gray-50 rounded-lg border flex justify-between"><span>${o.date} (${o.items} prendas)</span><b>$${o.total}</b></div>`).join("")
+                    : `<p class="text-gray-400">Aún no has enviado pedidos.</p>`;
+            } else {
+                tabsHeader.classList.remove("hidden");
+                profileView.classList.add("hidden");
+                switchClientAuthMode('login');
+            }
+        }
+
+        function closeAuthModal() {
+            document.getElementById("authModal").classList.add("hidden");
+        }
+
+        function switchClientAuthMode(mode) {
+            const loginForm = document.getElementById("unifiedLoginForm");
+            const registerForm = document.getElementById("clientRegisterForm");
+            const subLogin = document.getElementById("subTabLogin");
+            const subReg = document.getElementById("subTabRegister");
+
+            if (mode === "login") {
+                loginForm.classList.remove("hidden");
+                registerForm.classList.add("hidden");
+                subLogin.className = "text-black border-b-2 border-black pb-2";
+                subReg.className = "text-gray-400 pb-2 hover:text-black";
+            } else {
+                loginForm.classList.add("hidden");
+                registerForm.classList.remove("hidden");
+                subReg.className = "text-black border-b-2 border-black pb-2";
+                subLogin.className = "text-gray-400 pb-2 hover:text-black";
+            }
+        }
+
+        function handleUnifiedLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById("loginEmail").value.trim().toLowerCase();
+            const pass = document.getElementById("loginPassword").value.trim();
+
+            if (email === ADMIN_CREDENTIALS.email.toLowerCase() && pass === ADMIN_CREDENTIALS.password) {
+                currentSession = { role: "admin", name: "Administrador", email };
+                localStorage.setItem("aef_session", JSON.stringify(currentSession));
+                updateAuthUI();
+                closeAuthModal();
+                toggleAdminView();
+                showToast("Modo Personal / Administrador activado");
+                document.getElementById("unifiedLoginForm").reset();
+                return;
+            }
+
+            const foundClient = registeredClients.find(c => c.email.toLowerCase() === email && c.password === pass);
+            if (!foundClient) {
+                showToast("Correo o contraseña incorrectos");
+                return;
+            }
+
+            currentSession = { ...foundClient, role: "client" };
+            localStorage.setItem("aef_session", JSON.stringify(currentSession));
+            updateAuthUI();
+            updateCartUI();
+            closeAuthModal();
+            showToast(`¡Bienvenida, ${foundClient.name}!`);
+            document.getElementById("unifiedLoginForm").reset();
+        }
+
+        function handleClientRegister(e) {
+            e.preventDefault();
+            const name = document.getElementById("regName").value.trim();
+            const email = document.getElementById("regEmail").value.trim().toLowerCase();
+            const phone = document.getElementById("regPhone").value.trim();
+            const address = document.getElementById("regAddress").value.trim();
+            const password = document.getElementById("regPassword").value.trim();
+
+            if (email === ADMIN_CREDENTIALS.email.toLowerCase()) {
+                showToast("Este correo no está disponible");
+                return;
+            }
+            if (registeredClients.some(c => c.email.toLowerCase() === email)) {
+                showToast("Este correo ya está registrado");
+                return;
+            }
+
+            const newClient = { name, email, phone, address, password, orders: [] };
+            registeredClients.push(newClient);
+            localStorage.setItem("aef_clients", JSON.stringify(registeredClients));
+
+            currentSession = { ...newClient, role: "client" };
+            localStorage.setItem("aef_session", JSON.stringify(currentSession));
+            updateAuthUI();
+            updateCartUI();
+            closeAuthModal();
+            showToast(`Cuenta creada. ¡Bienvenida, ${name}!`);
+        }
+
+        function logoutUser() {
+            currentSession = null;
+            localStorage.removeItem("aef_session");
+            updateAuthUI();
+            showPublicView();
+            closeAuthModal();
+            showToast("Sesión cerrada correctamente");
+        }
+
+        function updateAuthUI() {
+            const label = document.getElementById("userAuthLabel");
+            const adminBtn = document.getElementById("adminNavBtn");
+
+            if (!currentSession) {
+                label.textContent = "Iniciar Sesión";
+                adminBtn.classList.add("hidden");
+                adminBtn.classList.remove("flex");
+            } else if (currentSession.role === "client") {
+                label.textContent = `Hola, ${currentSession.name.split(" ")[0]}`;
+                adminBtn.classList.add("hidden");
+                adminBtn.classList.remove("flex");
+            } else if (currentSession.role === "admin") {
+                label.textContent = "Admin Activo";
+                adminBtn.classList.remove("hidden");
+                adminBtn.classList.add("flex");
+            }
+        }
+
+        // ==========================================
+        // PANEL PRIVADO DE ADMIN (BCV + PAGOS + PRODUCTOS)
+        // ==========================================
+        function toggleAdminView() {
+            if (!currentSession || currentSession.role !== "admin") {
+                showToast("Acceso restringido");
+                return;
+            }
+            document.getElementById("publicStoreView").classList.add("hidden");
+            document.getElementById("adminPanelView").classList.remove("hidden");
+            document.getElementById("adminBcvInput").value = bcvRate;
+            document.getElementById("adminPagoMovilInput").value = paymentDetails.pagoMovil;
+            document.getElementById("adminZelleInput").value = paymentDetails.zelle;
+            document.getElementById("adminBinanceInput").value = paymentDetails.binance;
+            renderAdminInventory();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        function showPublicView() {
+            document.getElementById("adminPanelView").classList.add("hidden");
+            document.getElementById("publicStoreView").classList.remove("hidden");
+        }
+
+        function saveBcvRateFromAdmin() {
+            const val = parseFloat(document.getElementById("adminBcvInput").value);
+            if (!val || val <= 0) {
+                showToast("Ingresa una tasa BCV válida");
+                return;
+            }
+            bcvRate = val;
+            localStorage.setItem("aef_bcv_rate", bcvRate);
+            updateBcvBadges();
+            renderCatalog();
+            updateCartUI();
+            renderAdminInventory();
+            showToast(`Tasa BCV actualizada a Bs. ${bcvRate.toFixed(2)}`);
+        }
+
+        function savePaymentDetailsFromAdmin() {
+            paymentDetails.pagoMovil = document.getElementById("adminPagoMovilInput").value.trim() || paymentDetails.pagoMovil;
+            paymentDetails.zelle = document.getElementById("adminZelleInput").value.trim() || paymentDetails.zelle;
+            paymentDetails.binance = document.getElementById("adminBinanceInput").value.trim() || paymentDetails.binance;
+            localStorage.setItem("aef_payment_details", JSON.stringify(paymentDetails));
+            selectPaymentMethod(selectedPaymentMethod);
+            showToast("Datos de métodos de pago actualizados");
+        }
+
+        function handleProductImageUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                uploadedProductBase64 = e.target.result;
+                document.getElementById("prodImage").value = "";
+                const preview = document.getElementById("prodImagePreview");
+                preview.src = uploadedProductBase64;
+                document.getElementById("prodImagePreviewContainer").classList.remove("hidden");
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function saveProductFromForm(e) {
+            e.preventDefault();
+            const id = document.getElementById("prodId").value;
+            const name = document.getElementById("prodName").value.trim();
+            const price = parseFloat(document.getElementById("prodPrice").value);
+            const category = document.getElementById("prodCategory").value;
+            const badge = document.getElementById("prodBadge").value;
+            const urlInput = document.getElementById("prodImage").value.trim();
+
+            const selectedSizes = Array.from(document.querySelectorAll(".prod-size-cb:checked")).map(cb => cb.value);
+            if (selectedSizes.length === 0) {
+                showToast("Selecciona al menos una talla");
+                return;
+            }
+
+            const finalImage = uploadedProductBase64 || urlInput || "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80";
+
+            if (id) {
+                const idx = products.findIndex(p => p.id === id);
+                if (idx > -1) {
+                    products[idx] = { id, name, price, category, image: finalImage, sizes: selectedSizes, badge };
+                }
+                showToast("Prenda actualizada correctamente");
+            } else {
+                products.unshift({
+                    id: "aef-" + Date.now(),
+                    name,
+                    price,
+                    category,
+                    image: finalImage,
+                    sizes: selectedSizes,
+                    badge
+                });
+                showToast("Nueva prenda agregada al catálogo");
+            }
+
+            localStorage.setItem("aef_products", JSON.stringify(products));
+            resetProductForm();
+            renderCatalog();
+            renderAdminInventory();
+        }
+
+        function editProduct(prodId) {
+            const prod = products.find(p => p.id === prodId);
+            if (!prod) return;
+
+            document.getElementById("formTitle").textContent = "✏️ Editar Prenda";
+            document.getElementById("cancelEditBtn").classList.remove("hidden");
+            document.getElementById("prodId").value = prod.id;
+            document.getElementById("prodName").value = prod.name;
+            document.getElementById("prodPrice").value = prod.price;
+            document.getElementById("prodCategory").value = prod.category;
+            document.getElementById("prodBadge").value = prod.badge;
+            document.getElementById("prodImage").value = prod.image.startsWith("data:") ? "" : prod.image;
+            uploadedProductBase64 = prod.image.startsWith("data:") ? prod.image : "";
+
+            const preview = document.getElementById("prodImagePreview");
+            preview.src = prod.image;
+            document.getElementById("prodImagePreviewContainer").classList.remove("hidden");
+
+            document.querySelectorAll(".prod-size-cb").forEach(cb => {
+                cb.checked = prod.sizes.includes(cb.value);
+            });
+        }
+
+        function deleteProduct(prodId) {
+            products = products.filter(p => p.id !== prodId);
+            localStorage.setItem("aef_products", JSON.stringify(products));
+            renderCatalog();
+            renderAdminInventory();
+            showToast("Prenda eliminada");
+        }
+
+        function resetProductForm() {
+            document.getElementById("productForm").reset();
+            document.getElementById("prodId").value = "";
+            uploadedProductBase64 = "";
+            document.getElementById("formTitle").textContent = "➕ Cargar Nueva Prenda";
+            document.getElementById("cancelEditBtn").classList.add("hidden");
+            document.getElementById("prodImagePreviewContainer").classList.add("hidden");
+        }
+
+        function renderAdminInventory() {
+            document.getElementById("adminTotalProducts").textContent = products.length;
+            const list = document.getElementById("adminProductsList");
+
+            list.innerHTML = products.map(p => `
+                <div class="py-4 flex items-center justify-between gap-4">
+                    <div class="flex items-center gap-3.5">
+                        <img src="${p.image}" class="w-14 h-16 object-cover rounded-xl border" />
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-gray-100">${p.badge}</span>
+                            <h4 class="font-bold text-sm mt-1">${p.name}</h4>
+                            <p class="text-xs text-gray-500">${p.category} • <b>$${Number(p.price).toFixed(2)}</b> (${formatBs(p.price)}) • Tallas: ${p.sizes.join(", ")}</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button onclick="editProduct('${p.id}')" class="p-2 text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg" title="Editar">
+                            <i data-lucide="pencil" class="w-4 h-4"></i>
+                        </button>
+                        <button onclick="deleteProduct('${p.id}')" class="p-2 text-red-500 hover:bg-red-50 rounded-lg" title="Eliminar">
+                            <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join("");
+            lucide.createIcons();
+        }
+
+        function exportCatalogJSON() {
+            navigator.clipboard.writeText(JSON.stringify(products, null, 2));
+            showToast("Catálogo JSON copiado al portapapeles");
+        }
+
+        // Subida de Logo Personalizado
+        function handleLogoUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                localStorage.setItem("aef_custom_logo", e.target.result);
+                loadCustomLogo();
+                showToast("Logo actualizado");
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function loadCustomLogo() {
+            const saved = localStorage.getItem("aef_custom_logo");
+            const img = document.getElementById("customLogoImg");
+            const svg = document.getElementById("defaultLogoSvg");
+            if (saved) {
+                img.src = saved;
+                img.classList.remove("hidden");
+                svg.classList.add("hidden");
+            } else {
+                img.classList.add("hidden");
+                svg.classList.remove("hidden");
+            }
+        }
+
+        function resetCustomLogo() {
+            localStorage.removeItem("aef_custom_logo");
+            loadCustomLogo();
+            showToast("Logo vectorial restaurado");
+        }
+
+        // Favoritos (Wishlist)
+        function toggleWishlist(prodId) {
+            const idx = wishlist.indexOf(prodId);
+            if (idx > -1) wishlist.splice(idx, 1);
+            else wishlist.push(prodId);
+            localStorage.setItem("aef_wishlist", JSON.stringify(wishlist));
+            updateWishlistUI();
+            renderCatalog();
+        }
+
+        function updateWishlistUI() {
+            const badge = document.getElementById("wishlistBadge");
+            if (wishlist.length > 0) {
+                badge.textContent = wishlist.length;
+                badge.classList.remove("hidden");
+                badge.classList.add("flex");
+            } else {
+                badge.classList.add("hidden");
+                badge.classList.remove("flex");
+            }
+        }
+
+        function openWishlistModal() {
+            document.getElementById("wishlistModal").classList.remove("hidden");
+            const container = document.getElementById("wishlistContainer");
+            const favProds = products.filter(p => wishlist.includes(p.id));
+            if (favProds.length === 0) {
+                container.innerHTML = `<p class="text-center text-gray-400 text-xs py-8">No tienes prendas guardadas en favoritos.</p>`;
+                return;
+            }
+            container.innerHTML = favProds.map(p => `
+                <div class="py-3 flex items-center justify-between gap-4">
+                    <div class="flex items-center gap-3">
+                        <img src="${p.image}" class="w-12 h-14 object-cover rounded-lg border" />
+                        <div>
+                            <h4 class="text-xs font-bold">${p.name}</h4>
+                            <p class="text-xs font-extrabold">$${Number(p.price).toFixed(2)} <span class="font-normal text-gray-500">(${formatBs(p.price)})</span></p>
+                        </div>
+                    </div>
+                    <button onclick="addToCart('${p.id}'); closeWishlistModal();" class="px-3 py-1.5 bg-black text-white text-[10px] font-bold uppercase rounded-lg">
+                        Al Carrito
+                    </button>
+                </div>
+            `).join("");
+        }
+
+        function closeWishlistModal() {
+            document.getElementById("wishlistModal").classList.add("hidden");
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById("mobileMenu").classList.toggle("hidden");
+        }
+    </script>
+</body>
+</html>
